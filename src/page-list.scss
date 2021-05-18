@@ -1,0 +1,126 @@
+.page-list-navigation {
+    background-color: $sec-color;
+}
+
+.page-list-navigation {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__ul {
+        flex-basis: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 80%;
+    }
+
+
+    &__li {
+        padding: 20px 0;
+    }
+
+
+
+    &__link {
+        color: $mainColor;
+        font-weight: 600;
+        font-size: $base*10;
+        line-height: $base*12;
+        padding: 10px 0;
+        transition: $transition;
+    }
+
+    &__link:hover {
+        color: #CDBD84;
+    }
+}
+
+
+
+.section-catalog-product-collection {
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        border: 1px solid #EBEBEB;
+        border-radius: 3px;
+        background-color: #fff;
+        transition: $transition;
+        margin-bottom: 30px;
+    }
+
+    &__item:hover {
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    &__img {
+        max-width: 271px;
+        max-height: 271px;
+    }
+
+    &__details {
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__desc {
+        flex-grow: 1;
+        margin-bottom: $base*15;
+    }
+}
+
+@media (max-width: $xl) {
+    .page-list-navigation {
+
+
+        &__link {
+            color: $mainColor;
+            font-weight: 600;
+            font-size: $base*7;
+            line-height: $base*6;
+        }
+
+    }
+}
+
+@media (max-width: $lg) {
+    .page-list-navigation {
+        &__wrapper {
+            display: none;
+        }
+    }
+
+
+    .section-catalog-product-collection {
+
+        &__item {
+            display: block;
+            text-align: center;
+            padding: 15px 7px;
+            border: 1px solid #EBEBEB;
+            border-radius: 3px;
+            background-color: #fff;
+            transition: $transition;
+            margin-bottom: 30px;
+        }
+
+        &__img {
+            max-width: 100%;
+            max-height: auto;
+
+        }
+
+        &__details {
+            align-items: center;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 70%;
+        }
+    }
+}

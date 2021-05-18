@@ -1,0 +1,322 @@
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-menu {
+    margin: auto 0;
+
+    display: none;
+
+    &__btn {
+        display: block;
+        width: 28px;
+        height: 28px;
+        position: relative;
+        background-color: transparent;
+    }
+
+    &__span,
+    &__span::after,
+    &__span::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // transform: translateX(-50%);
+        margin-left: -10px;
+        margin-top: -1.5px;
+        width: 20px;
+        height: 3px;
+        background-color: #69A54D;
+    }
+
+    &__span::after,
+    &__span::before {
+        content: '';
+    }
+
+    &__span::after {
+        transform: translateY(7px);
+    }
+
+    &__span::before {
+        transform: translateY(-7px);
+    }
+
+}
+
+.logo {
+    margin-top: $base*8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__img {
+        width: 136px;
+        height: 116px;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: $base*225;
+    margin-top: $base*20;
+    margin-bottom: $base*20;
+}
+
+.nav {
+    margin-bottom: $base*15;
+
+    &__ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__li {}
+
+    &__link {
+        font-weight: 600;
+        font-size: $base*8;
+        color: $dark;
+        transition: $transition;
+
+        &:hover {
+            color: $linkGreen;
+        }
+    }
+}
+
+.mode {
+    line-height: $base*10;
+}
+
+.mail {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: $base*8 0;
+    flex-basis: 150px;
+    text-align: center;
+    margin-bottom: $base*20;
+
+    &__link {
+        color: $linkGreen;
+        font-weight: 500;
+        font-size: $base*10;
+        transition: $transition;
+
+        &:hover {
+            color: darken($linkGreen, 10%);
+        }
+    }
+}
+
+.box {
+    flex-basis: 270px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: $base*20;
+}
+
+.lang {
+    display: flex;
+}
+
+.lang-ul {
+    display: flex;
+
+    &__li {
+        padding: 0 $base*5;
+    }
+
+    &__li:first-child {
+
+        border-right: 1px solid #C4C4C4;
+    }
+
+    &__link {
+        color: $linkGreen;
+        font-size: $base*10;
+        font-weight: 500;
+
+        &:hover {
+            color: darken($linkGreen, 10%);
+        }
+    }
+
+    &__link--active {
+        color: $dark;
+    }
+}
+
+.lang-select {
+    flex-grow: 1;
+    text-align: right;
+    position: relative;
+
+    &__li {
+        display: inline-block;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: $base*10;
+    }
+}
+
+.lang-drop {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: $base*5;
+    right: 0;
+    border-radius: $base*4;
+    text-align: center;
+    z-index: 10;
+
+    &__item {
+        padding: $base*6 0;
+    }
+
+    &__link {
+        color: $dark;
+        font-size: $base*8;
+        padding: $base*5;
+        border-radius: $base*4;
+        transition: $transition;
+
+        &:hover {
+            background-color: $linkGreen;
+            color: #fff;
+        }
+    }
+}
+
+.lang-select__li:hover .lang-drop {
+    display: block;
+}
+
+.tel {
+    text-align: right;
+
+    &__link {
+        font-size: $base*10;
+        font-weight: 600;
+        color: $dark;
+        transition: $transition;
+        &:hover {
+            color: $linkGreen;
+        }
+    }
+}
+
+@media (max-width: $xl) {
+    .mode {
+        font-size: $base*7;
+    }
+
+    .mail {
+        &__link {
+            font-size: $base*8;
+        }
+    }
+
+    .tel {
+        &__link {
+            font-size: $base*8;
+        }
+    }
+}
+
+@media (max-width: $lg) {
+
+    .container {
+        padding: 0 $base*20;
+    }
+
+    .logo {
+        &__img {
+            width: 106px;
+            height: 93px;
+        }
+    }
+
+    .navigation {
+        justify-content: center;
+        flex-basis: 180px;
+    }
+
+    .nav {
+        margin: 0;
+
+        &__ul {
+            display: none;
+        }
+    }
+
+    .mail {
+        display: none;
+    }
+
+    .mode {
+        text-align: right;
+        font-size: $base*7;
+        margin: 0;
+    }
+
+    .toggle-menu {
+        display: block;
+    }
+
+}
+
+@media (max-width: $md) {
+
+    .container {
+        align-items: center;
+        padding: 0 $base*10;
+    }
+
+    .logo {
+        &__img {
+            width: 79px;
+            height: 69px;
+        }
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .tel {
+        display: none;
+    }
+
+    .box {
+        flex-basis: 100px;
+        margin: auto 0;
+    }
+
+    .lang {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lang-ul {
+        justify-content: flex-end;
+
+        &__link {
+            font-size: $base*7;
+        }
+    }
+
+    .lang-select {
+        flex-grow: 0;
+        text-align: right;
+
+        &__li {
+            font-size: $base*7;
+        }
+    }
+}

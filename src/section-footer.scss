@@ -1,0 +1,137 @@
+.section-footer {
+    padding-top: $base*32;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__ul {
+        flex-basis: calc(100% / 3);
+    }
+
+    &__ul-first {
+        flex-basis: 20%;
+    }
+
+    &__li {
+        margin-bottom: $base*9;
+    }
+
+    &__link {
+        color: $dark;
+        font-size: $base*8;
+        font-weight: 400;
+        transition: $transition;
+        &:hover {
+            color: $linkGreen;
+        }
+    }
+}
+
+.footer-logo {
+    margin: 0;
+    display: block;
+    flex-basis: 20%;
+}
+
+.footer-contacts {
+    margin-top: $base*20;
+    margin-bottom: $base*50;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+
+    &__desc {
+        color: $dark;
+        font-weight: 400;
+        font-size: $base*8;
+        line-height: $base*9;
+    }
+
+    .contact {
+        &__icon {
+            margin-bottom: $base*4;
+        }
+
+        flex-basis: calc(100% / 3);
+
+    }
+}
+
+.footer-bottom {
+    background-color: #fff;
+    
+    &__items {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        flex-basis: calc(100% / 3);
+        margin-top: $base*15;
+        margin-bottom: $base*30;
+    }
+
+    &__link {
+        color: $dark;
+        font-size: $base*8;
+        font-weight: 400;
+        line-height: $base*15;
+        transition: $transition;
+
+        &:hover {
+            color: $linkGreen;
+        }
+    }
+}
+
+@media (max-width: $lg) {
+    .footer-nav {
+        display: none;
+    }
+
+    .footer-contacts {
+        margin-top: $base*20;
+        margin-bottom: $base*50;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .contact {
+            flex-basis: calc(100% / 2);
+            margin-bottom: $base*35;
+        }
+    }
+
+    .footer-bottom {
+        text-align: center;
+        &__items {
+            display: block;
+        }
+
+        &__item {
+            flex-basis: calc(100% / 3);
+            margin-top: $base*7;
+            margin-bottom: $base*7;
+        }
+    }
+
+}
+
+@media (max-width: $md) {
+    .footer-contacts {
+        margin-top: $base*20;
+        margin-bottom: $base*50;
+
+        display: block;
+        text-align: center;
+
+    }
+
+
+}

@@ -1,0 +1,47 @@
+.service {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__img-wrapp {
+        position: relative;
+
+    }
+    &__item {
+        flex-basis: calc(100% / 2 - 20px);
+        margin-bottom: 30px;
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+    &__num {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        color: $mainColor;
+        font-size: $base*24;
+        font-weight: 700;
+        line-height: $base*29;
+        opacity: .7;
+    }
+    &__desc {
+        font-size: $base*8;
+        line-height: $base*12;
+        font-weight: 400;
+        color: $dark;
+    }
+}
+
+
+@media (max-width: $md) {
+    .service {
+        &__items {
+            display: block;
+        }
+        &__desc {
+            font-size: $base*7;
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.section-catalog {}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.item {
+    position: relative;
+    overflow: hidden;
+    flex-basis: calc(100% / 4 - 20px);
+    margin-bottom: 30px;
+    
+    &__img {
+        transition: transform $transition;
+        filter: brightness(40%);
+        width: 100%;
+        height: 100%;
+        
+    }
+    &__name {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        color: $mainColor;
+        font-weight: 600;
+        font-size: $base*9;
+        line-height: $base*14;
+    }
+    
+    &__link {
+        display: block;
+        font-size: 0;
+    }
+
+    &__whatch {
+        position: absolute;
+        bottom: $base*17;
+        left: $base*15;
+        transition: transform $transition;
+    }
+
+    &:hover &__img {
+        transform: scale(1.1);
+    }
+    &:hover &__whatch {
+        transform: translate(50%, 0);
+    }
+}
+
+@media (max-width: $lg) {
+    .section-catalog {}
+    
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-right: 0;
+        justify-content: space-between;
+    }
+    
+    
+    
+    .item {
+        position: relative;
+        overflow: hidden;
+        flex-basis: calc(100% / 3 - 15px);
+        
+        margin-right: 0;
+        
+        &__img {
+            transition: transform $transition;
+            filter: brightness(40%);
+            width: 100%;
+            height: 100%;
+            
+        }
+        &__name {
+            font-size: $base*9;
+            line-height: $base*14;
+        }
+        
+        &__link {
+            display: block;
+            font-size: 0;
+        }
+    
+        &__whatch {
+            position: absolute;
+            bottom: $base*17;
+            left: $base*15;
+            transition: transform $transition;
+        }
+    
+        &:hover &__img {
+            transform: scale(1.1);
+        }
+        &:hover &__whatch {
+            transform: translate(50%, 0);
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .items {
+        display: block;
+    }
+
+    .item {
+        &__name {
+            font-size: $base*9;
+            line-height: $base*9;
+        }
+    }
+}
